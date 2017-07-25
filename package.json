@@ -1,0 +1,24 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "An amazon store front clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashishdommety/bamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashishdommety/bamazon/issues"
+  },
+  "homepage": "https://github.com/ashishdommety/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.2.1",
+    "mysql": "^2.13.0"
+  }
+}
