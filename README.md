@@ -1,4 +1,4 @@
-# bamazon
+# Bamazon
 Bamazon is an amazon storefront clone that works with Node and MySQL.
 There are two separate Javascript files that a user can choose from:
 
@@ -6,7 +6,7 @@ There are two separate Javascript files that a user can choose from:
 2. bamazonManager.js
 
 
-## The Bamazon Customer
+## The Bamazon Customer:
 <img align="left" src="https://github.com/ashishdommety/bamazon/blob/master/gifs/bamazonCustomer.gif">
 
 
@@ -54,11 +54,16 @@ The manager is then able to add stock to any item choosing "Add to Inventory". A
 ### Add New Product
 This feature allows the manager to add a whole new product, and allows them to enter the price of each product, their department, and the intial stock.
 
+<br>
+<br>
+<br>
 
-
-
-## Technologies Used:
+## Technologies Used: :nut_and_bolt:
 The Technologies used in this project were:
 1. Node JS
 2. mySql
 3. Inquirer, mysql and cli-table (npm packages)
+
+<br>
+
+## Thank you!
