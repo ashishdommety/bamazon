@@ -6,7 +6,7 @@ There are two separate Javascript files that a user can choose from:
 2. bamazonManager.js
 
 
-## The Bamazon Customer:
+## The Bamazon Customer: :smiley_cat:
 <img align="left" src="https://github.com/ashishdommety/bamazon/blob/master/gifs/bamazonCustomer.gif">
 
 
@@ -32,7 +32,7 @@ After a purchase, the user is prompted whether they want to buy more products or
 <br>
 
 
-## The Bamazon Manager
+## The Bamazon Manager :snowman:
 <img align="right" src="https://github.com/ashishdommety/bamazon/blob/master/gifs/bamazonManager.gif">
 
 
@@ -56,7 +56,6 @@ This feature allows the manager to add a whole new product, and allows them to e
 
 <br>
 <br>
-<br>
 
 ## Technologies Used: :nut_and_bolt:
 The Technologies used in this project were:
@@ -66,4 +65,4 @@ The Technologies used in this project were:
 
 <br>
 
-## Thank you!
+## Thank you! :alien:
