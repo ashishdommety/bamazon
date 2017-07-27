@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ashishdommety/bamazon#readme",
   "dependencies": {
+    "cli-table": "^0.3.1",
     "inquirer": "^3.2.1",
     "mysql": "^2.13.0"
   }

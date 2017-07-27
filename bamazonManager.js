@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql");
+const Table = require("cli-table");
 
 const connection = require("./credentials.js");
 
@@ -27,10 +28,16 @@ inquirer.prompt([{
 
 function displaySale() {
   console.log("\n All the products available for sale: \n");
+  var table = new Table({
+    head:["ID", "Name", "Department", "Price", "Stock"],
+    colWidths:[5,15,20,10,10]
+  });
   connection.query("SELECT * FROM products", function(err, res) {
     for (var i = 0; i < res.length; i++) {
-      console.log(`${res[i].item_id}  ${res[i].product_name}  ${res[i].department_name}  $${res[i].price}  ${res[i].stock_quantity}`);
+      table.push([res[i].item_id,res[i].product_name,res[i].department_name,res[i].price,res[i].stock_quantity]);
+      // console.log(`${res[i].item_id}--Name:${res[i].product_name} --Department:${res[i].department_name}--Price:$${res[i].price}--Stock:${res[i].stock_quantity}`);
     }
+    console.log(table.toString());
   })
 }
 
@@ -38,8 +45,13 @@ function displayLow() {
   connection.query("SELECT * FROM products WHERE stock_quantity <= 5", function(err, res) {
     if (res.length) {
       console.log("\n All the products low on inventory: \n");
+      var table = new Table({
+        head:["ID", "Name", "Department", "Price", "Stock"],
+        colWidths:[5,15,20,10,10]
+      });
       for (var i = 0; i < res.length; i++) {
-        console.log(`${res[i].item_id}  ${res[i].product_name}  ${res[i].department_name}  $${res[i].price}  ${res[i].stock_quantity}`);
+        table.push([res[i].item_id,res[i].product_name,res[i].department_name,res[i].price,res[i].stock_quantity]);
+        // console.log(`${res[i].item_id}  ${res[i].product_name}  ${res[i].department_name}  $${res[i].price}  ${res[i].stock_quantity}`);
       }
     } else {
       console.log("\n There are no products that are less than 5 in quantity \n");
