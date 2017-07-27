@@ -27,6 +27,11 @@ After a purchase, the user is prompted whether they want to buy more products or
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+
+
 ## The Bamazon Manager
 <img align="right" src="https://github.com/ashishdommety/bamazon/blob/master/gifs/bamazonManager.gif">
 
