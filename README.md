@@ -7,8 +7,7 @@ There are two separate Javascript files that a user can choose from:
 
 
 ## The Bamazon Customer
-
-![bamazon customer gif](https://github.com/ashishdommety/bamazon/blob/master/gifs/bamazonCustomer.gif)
+<img align="left" width="100" height="100" src="https://github.com/ashishdommety/bamazon/blob/master/gifs/bamazonCustomer.gif">
 
 In this option, the customer is displayed all the available products, their price and IDs. On choosing an ID the CLI will prompt the user how many products they'd like to buy. If the quantity the user chooses exceeds the stock availability, then the user will receive a notification:
 ```
