@@ -9,22 +9,26 @@ connection.connect(function(err) {
   // console.log("connected as id " + connection.threadId );
 });
 
-inquirer.prompt([{
-  type: "list",
-  message: "What would you like to do?",
-  choices: ["View Products for Sale", "View Low Inventory", "Add To Inventory", "Add New Product"],
-  name: "feature"
-}]).then(function(answer) {
-  if (answer.feature === "View Products for Sale") {
-    displaySale();
-  } else if (answer.feature === "View Low Inventory") {
-    displayLow();
-  } else if (answer.feature === "Add To Inventory") {
-    addInventory();
-  } else {
-    addNewProduct();
-  }
-});
+function chooseAction(){
+  inquirer.prompt([{
+    type: "list",
+    message: "What would you like to do?",
+    choices: ["View Products for Sale", "View Low Inventory", "Add To Inventory", "Add New Product"],
+    name: "feature"
+  }]).then(function(answer) {
+    if (answer.feature === "View Products for Sale") {
+      displaySale();
+    } else if (answer.feature === "View Low Inventory") {
+      displayLow();
+    } else if (answer.feature === "Add To Inventory") {
+      addInventory();
+    } else {
+      addNewProduct();
+    }
+  });
+}
+
+chooseAction();
 
 function displaySale() {
   console.log("\n All the products available for sale: \n");
@@ -39,6 +43,7 @@ function displaySale() {
     }
     console.log(table.toString());
   })
+  // wantToContinue();
 }
 
 function displayLow() {
@@ -47,7 +52,7 @@ function displayLow() {
       console.log("\n All the products low on inventory: \n");
       var table = new Table({
         head:["ID", "Name", "Department", "Price", "Stock"],
-        colWidths:[5,15,20,10,10]
+        colWidths:[3,15,15,6,6]
       });
       for (var i = 0; i < res.length; i++) {
         table.push([res[i].item_id,res[i].product_name,res[i].department_name,res[i].price,res[i].stock_quantity]);
@@ -55,6 +60,7 @@ function displayLow() {
       }
     } else {
       console.log("\n There are no products that are less than 5 in quantity \n");
+      // wantToContinue();
     }
   });
 }
@@ -84,6 +90,7 @@ function addInventory() {
         });
     });
   });
+  // wantToContinue();
 }
 
 function addNewProduct() {
@@ -118,5 +125,20 @@ function addNewProduct() {
       if (err) throw err;
       console.log(`You've successfully added ${answer.productName}`);
     })
+  })
+  // wantToContinue();
+}
+
+function wantToContinue(){
+  inquirer.prompt([{
+    type:"confirm",
+    message:"Would you like to choose another option",
+    name:"keepGoing"
+  }]).then(function(answer){
+    if(answer.keepGoing){
+      chooseAction();
+    } else{
+      process.exit();
+    }
   })
 }
